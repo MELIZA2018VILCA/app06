@@ -1,115 +1,220 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+      home: Scaffold(
+        body: Container(
+          child: Column(
+            children: [
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(66, 175, 216, 250),
+                  borderRadius: new BorderRadius.only(
+                    topLeft: const Radius.circular(10.0),
+                    topRight: const Radius.circular(10.0),
+                  ),
+                ),
+                child: Container(
+                  height: 500,
+                  width: 3000,
+                  padding:
+                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 100.0),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 198, 217, 240),
+                    borderRadius: BorderRadius.circular(18.0),
+                  ),
+                  child: Column(
+                    children: [
+                      CircleAvatar(
+                          radius: 60.0,
+                          backgroundColor: Colors.white,
+                          backgroundImage:
+                              AssetImage("assets/images/Imagen1.png")),
+                      SizedBox(
+                        height: 50.0,
+                      ),
+                      Container(
+                        height: 50,
+                        width: 300,
+                        padding: EdgeInsets.symmetric(
+                            vertical: 5.0, horizontal: 10.0),
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 250, 250, 250),
+                          borderRadius: BorderRadius.circular(20.0),
+                        ),
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            Container(
+                              child: const Text('email Address'),
+                            ),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            Row(
+                              children: [
+                                Container(
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Icon(
+                                        Icons.email_outlined,
+                                        size: 20.0,
+                                        color: Color.fromARGB(255, 12, 12, 12),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 10.0,
+                                ),
+                                Container(
+                                  child: const Text('Username@gmail.com'),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20.0,
+                      ),
+                      Container(
+                        height: 50,
+                        width: 300,
+                        padding: EdgeInsets.symmetric(
+                            vertical: 5.0, horizontal: 10.0),
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 250, 250, 250),
+                          borderRadius: BorderRadius.circular(20.0),
+                        ),
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            Container(
+                              child: const Text('PAssword',textAlign: TextAlign.left),
+                            ),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            Row(
+                              children: [
+                                Container(
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Icon(
+                                        Icons.shopping_bag_outlined,
+                                        size: 20.0,
+                                        color: Color.fromARGB(255, 12, 12, 12),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 10.0,
+                                ),
+                                Container(
+                                  child: const Text('**********'),
+                                ),
+                                SizedBox(
+                                  width: 120.0,
+                                ),
+                                Container(
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Icon(
+                                        Icons.visibility,
+                                        size: 20.0,
+                                        color: Color.fromARGB(255, 12, 12, 12),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                              height: 20.0,
+                            ),
+                      Container(
+                        height: 50,
+                        width: 300,
+                        padding: EdgeInsets.symmetric(
+                            vertical: 5.0, horizontal: 10.0),
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 111, 129, 231),
+                          borderRadius: BorderRadius.circular(20.0),
+                        ),
+                        
+                        child: Center(child: Text("Login",textAlign: TextAlign.center,)),
+                      ),
+                      SizedBox(
+                              height: 20.0,
+                            ),
+                     Container(
+                padding: EdgeInsets.all(1),
+                decoration: BoxDecoration(),
+                child: Container(
+                  height: 80,
+                  width: 1000,
+                  padding:
+                      EdgeInsets.symmetric(vertical: 30.0, horizontal: 1.0),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          SizedBox(
+                            width: 10.0,
+                          ),
+                          Container(
+                            child: const Text('Signup'),
+                          ),
+                          SizedBox(
+                            width: 10.0,
+                          ),
+                          
+                          SizedBox(
+                            width: 70.0,
+                          ),
+                          Container(
+                            child: const Text('Forgot Password?'),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              ),
+                      
+                      
+                    ],
+                  ),
+                ),
+              ),
+              
+            ],
+          ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
